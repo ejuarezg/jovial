@@ -442,7 +442,13 @@ typeset -gA jovial_affix_lengths=()
 
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 @jov.set-host-name() {
-    jovial_parts[host]="${(%):-%m}"
+    # Add "SSH:" prefix to hostname to distinguish SSH sessions easily
+    if [[ -z "${SSH_CONNECTION}" ]]; then
+        jovial_parts[host]="${(%):-%m}"
+    else
+        # Use system alias variable if present, else fall back to hostname
+        [[ -z "${SYSTEM_ALIAS}" ]] && jovial_parts[host]="SSH:${(%):-%m}" || jovial_parts[host]="SSH:${SYSTEM_ALIAS}"
+    fi
     jovial_part_lengths[host]=$((
         ${#jovial_parts[host]}
         + ${jovial_affix_lengths[host]}
