@@ -447,7 +447,7 @@ typeset -gA jovial_affix_lengths=()
         jovial_parts[host]="${(%):-%m}"
     else
         # Use system alias variable if present, else fall back to hostname
-        [[ -z "${SYSTEM_ALIAS}" ]] && jovial_parts[host]="SSH:${(%):-%m}" || jovial_parts[host]="SSH:${SYSTEM_ALIAS}"
+        [[ -z "${SYSTEM_ALIAS}" ]] && jovial_parts[host]="%BSSH%b:${(%):-%m}" || jovial_parts[host]="%BSSH%b:${SYSTEM_ALIAS}"
     fi
     jovial_part_lengths[host]=$((
         ${#jovial_parts[host]}
