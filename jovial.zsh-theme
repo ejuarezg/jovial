@@ -133,7 +133,7 @@ typeset -gA JOVIAL_AFFIXES=(
     user.suffix            ' ${JOVIAL_PALETTE[conj.]}in'
 
     path.prefix            ' '
-    path.suffix            ''
+    path.suffix            '%b'
 
     dev-env.prefix         ' '
     dev-env.suffix         ''
