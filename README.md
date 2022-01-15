@@ -19,7 +19,7 @@
   <img src="./docs/jovial.png" alt="jovial" width="720">
 </p>
 
-That's for people **who don't want much ado about nothing in zsh, and just look for a handy theme**.
+That's for people **who don't want make trouble out of nothing in zsh, and just look for a handy theme**.
 
 So we make everything easy to use, even if you're new to zsh.
 
@@ -80,7 +80,7 @@ The description of each parts:
 Each parts of prompt is **"responsive"** with terminal windows width, so you can safely use it in narrow terminal.
 
 <!-- ./docs/jovial-responsive-desigin.mp4 -->
-<div><video controls muted autoplay loop src="https://user-images.githubusercontent.com/15135943/143185697-e1c612bb-d4ac-43a1-8c20-ae2a6c53e28a.mp4"></video></div>
+<div><video controls muted autoplay loop src="https://user-images.githubusercontent.com/15135943/148246834-08ecbbfc-6d0e-4c25-96b5-3638b32a4a28.mp4"></video></div>
 
 
 
@@ -105,6 +105,12 @@ It will detect to show your development programming language and version in curr
   <img src="./docs/jovial-develop-env-detect.png" alt="jovial-develop-env-detect" width="740">
 </p>
 
+
+### show execute elapsed
+
+<p align="center">
+  <img src="./docs/jovial-exec-elapsed.png" alt="jovial-exec-elapsed" width="600">
+</p>
 
 
 ## Plugins Integration
@@ -169,7 +175,6 @@ Then, add these zsh setting code in your `~/.zshrc` and load theme file:
 ```zsh
 # ~/.zshrc
 
-setopt prompt_subst
 source ~/.config/jovial.zsh-theme
 ```
 
@@ -178,6 +183,21 @@ Finally, don't forget to change the default login shell to `zsh`, maybe you can 
 ```zsh
 sudo chsh -s `command -v zsh` $USER
 ```
+
+
+### use with [antigen](https://github.com/zsh-users/antigen)
+
+```zsh
+# ~/.zshrc
+
+antigen bundle zthxxx/jovial
+antigen theme zthxxx/jovial
+
+...
+
+antigen apply
+```
+
 
 ### upgrade
 
